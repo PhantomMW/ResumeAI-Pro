@@ -1,5 +1,8 @@
 # 🚀 ResumeAI Pro
-
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.58-FF4B4B?logo=streamlit)
+![Google Gemini](https://img.shields.io/badge/Google-Gemini-blue?logo=google)
+![License](https://img.shields.io/badge/License-Educational-green)
 An AI-powered Resume Analyzer and Career Assistant built with **Streamlit** and **Google Gemini**.
 
 ## ✨ Features
