@@ -1,0 +1,25 @@
+# Virtual Environment
+venv/
+
+# Environment Variables
+.env
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Generated Files
+Resume_Report.pdf
+Cover_Letter.pdf
+Rewritten_Resume.pdf
+
+# Uploads & Reports
+uploads/
+reports/
+
+# VS Code
+.vscode/
+
+# Windows / macOS
+Thumbs.db
+.DS_Store

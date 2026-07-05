@@ -1,0 +1,26 @@
+[
+    {
+        "job": "Ai",
+        "ats": 90,
+        "resume": 78,
+        "decision": "Recommended"
+    },
+    {
+        "job": "AI",
+        "ats": 95,
+        "resume": 85,
+        "decision": "Recommended"
+    },
+    {
+        "job": "AI",
+        "ats": 15,
+        "resume": 25,
+        "decision": "Needs Improvement"
+    },
+    {
+        "job": "AI",
+        "ats": 15,
+        "resume": 40,
+        "decision": "Recommended"
+    }
+]
