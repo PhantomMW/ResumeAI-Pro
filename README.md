@@ -26,6 +26,80 @@ The application evaluates ATS compatibility, identifies missing skills, measures
 
 ---
 
+# 📸 Application Preview
+
+## 🏠 Home
+
+<p align="center">
+  <img src="assets/screenshots/home.png" width="100%">
+</p>
+
+---
+
+## 📄 Upload Resume
+
+<p align="center">
+  <img src="assets/screenshots/upload.png" width="100%">
+</p>
+
+---
+
+## 📊 Dashboard
+
+<p align="center">
+  <img src="assets/screenshots/dashboard.png" width="100%">
+</p>
+
+---
+
+## 🧠 Skills Analysis
+
+<p align="center">
+  <img src="assets/screenshots/skills.png" width="100%">
+</p>
+
+---
+
+## 📈 Analytics
+
+<p align="center">
+  <img src="assets/screenshots/charts.png" width="100%">
+</p>
+
+---
+
+## 💌 Cover Letter Generator
+
+<p align="center">
+  <img src="assets/screenshots/cover_letter.png" width="100%">
+</p>
+
+---
+
+## ✨ Resume Rewriter
+
+<p align="center">
+  <img src="assets/screenshots/rewrite_resume.png" width="100%">
+</p>
+
+---
+
+## 💼 Career Advisor
+
+<p align="center">
+  <img src="assets/screenshots/career_advisor.png" width="100%">
+</p>
+
+---
+
+## 🤖 Resume Chat
+
+<p align="center">
+  <img src="assets/screenshots/resume_chat.png" width="100%">
+</p>
+
+---
+
 # ✨ Features
 
 ✅ Resume Analysis
