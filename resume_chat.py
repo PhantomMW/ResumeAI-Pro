@@ -1,10 +1,4 @@
-import google.generativeai as genai
-
-from config import GEMINI_API_KEY
-
-genai.configure(api_key=GEMINI_API_KEY)
-
-model = genai.GenerativeModel("gemini-2.5-flash")
+from gemini_client import generate_ai_response
 
 
 def ask_resume_ai(
@@ -15,33 +9,27 @@ def ask_resume_ai(
 ):
 
     prompt = f"""
-You are an expert Career Coach, ATS Specialist, and Senior HR Manager.
+You are an AI Resume Expert.
 
-The user has already uploaded this resume.
+Answer the user's question based ONLY on the resume and job description.
 
 Resume:
+
 {resume_text}
 
 Target Job:
+
 {job_title}
 
 Job Description:
+
 {job_description}
 
-The user asks:
+User Question:
 
 {question}
 
-Answer professionally.
-
-Give practical advice.
-
-If the question is about improving the resume,
-answer based ONLY on the uploaded resume.
-
-Keep the answer concise.
+Provide a professional and helpful answer.
 """
 
-    response = model.generate_content(prompt)
-
-    return response.text
+    return generate_ai_response(prompt)

@@ -5,14 +5,24 @@
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.58-FF4B4B?logo=streamlit)
 ![Google Gemini](https://img.shields.io/badge/Google-Gemini-blue?logo=google)
-![License](https://img.shields.io/badge/License-Educational-green)
-![Status](https://img.shields.io/badge/Status-Completed-success)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Production-success)
 
 </p>
 
 <p align="center">
 
-An AI-powered Resume Analyzer & Career Assistant that helps job seekers optimize their resumes using Google Gemini AI.
+### AI-powered Resume Analyzer & Career Assistant
+
+Analyze resumes, evaluate ATS compatibility, match resumes with job descriptions, generate professional cover letters, rewrite resumes, create LinkedIn summaries, receive career guidance, chat with your resume, and export professional PDF reports using **Google Gemini AI**.
+
+</p>
+
+<p align="center">
+
+🌐 **Live Demo**
+
+https://phantommw-resumeai.streamlit.app/
 
 </p>
 
@@ -20,9 +30,85 @@ An AI-powered Resume Analyzer & Career Assistant that helps job seekers optimize
 
 # 📖 Overview
 
-ResumeAI Pro is an intelligent web application that analyzes resumes using Large Language Models (Google Gemini AI) and provides professional feedback to improve hiring opportunities.
+ResumeAI Pro is an intelligent AI-powered web application developed using **Python**, **Streamlit**, and **Google Gemini AI**.
 
-The application evaluates ATS compatibility, identifies missing skills, measures resume quality, generates professional cover letters, rewrites resumes, provides career guidance, creates interview questions, and exports comprehensive PDF reports.
+It helps job seekers improve their resumes by providing comprehensive AI analysis, ATS optimization, skill gap detection, career recommendations, interview preparation, and document generation.
+
+The project combines modern AI technologies with an interactive dashboard to create a complete resume optimization platform.
+
+---
+
+# 📸 Application Preview
+
+## 🏠 Home Page
+
+<p align="center">
+<img src="assets/screenshots/home.png" width="100%">
+</p>
+
+---
+
+## 📄 Upload Resume
+
+<p align="center">
+<img src="assets/screenshots/Upload.png" width="100%">
+</p>
+
+---
+
+## 📊 Resume Dashboard
+
+<p align="center">
+<img src="assets/screenshots/Dashboard.png" width="100%">
+</p>
+
+---
+
+## 🧠 Skills Analysis
+
+<p align="center">
+<img src="assets/screenshots/Skills.png" width="100%">
+</p>
+
+---
+
+## 📈 Interactive Charts
+
+<p align="center">
+<img src="assets/screenshots/Charts.png" width="100%">
+</p>
+
+---
+
+## 💌 Cover Letter Generator
+
+<p align="center">
+<img src="assets/screenshots/Cover_Letter.png" width="100%">
+</p>
+
+---
+
+## ✨ Resume Rewriter
+
+<p align="center">
+<img src="assets/screenshots/Rewrite.png" width="100%">
+</p>
+
+---
+
+## 💼 Career Advisor
+
+<p align="center">
+<img src="assets/screenshots/Career.png" width="100%">
+</p>
+
+---
+
+## 🤖 Resume AI Chat
+
+<p align="center">
+<img src="assets/screenshots/AI_ask.png" width="100%">
+</p>
 
 ---
 
@@ -102,57 +188,40 @@ The application evaluates ATS compatibility, identifies missing skills, measures
 
 # ✨ Features
 
-✅ Resume Analysis
-
-✅ ATS Compatibility Score
-
-✅ Resume Quality Score
-
-✅ Job Match Analysis
-
-✅ Grammar Evaluation
-
-✅ Formatting Analysis
-
-✅ Keyword Analysis
-
-✅ Hard Skills Detection
-
-✅ Soft Skills Detection
-
-✅ Missing Skills Analysis
-
-✅ Professional Resume Summary
-
-✅ AI Hiring Decision
-
-✅ AI Resume Rewriter
-
-✅ AI Cover Letter Generator
-
-✅ LinkedIn Summary Generator
-
-✅ AI Career Advisor
-
-✅ Resume AI Chat Assistant
-
-✅ Professional PDF Report
-
-✅ Analysis History
+- ✅ Resume Analysis
+- ✅ ATS Compatibility Score
+- ✅ Resume Quality Score
+- ✅ Job Match Analysis
+- ✅ Grammar Evaluation
+- ✅ Formatting Analysis
+- ✅ Keyword Analysis
+- ✅ Hard Skills Detection
+- ✅ Soft Skills Detection
+- ✅ Missing Skills Detection
+- ✅ AI Hiring Decision
+- ✅ Professional Resume Summary
+- ✅ AI Resume Rewriter
+- ✅ AI Cover Letter Generator
+- ✅ AI Career Advisor
+- ✅ AI LinkedIn Summary Generator
+- ✅ Resume AI Chat
+- ✅ Professional PDF Report
+- ✅ Analysis History
 
 ---
 
 # 🛠 Tech Stack
 
-| Category | Technologies |
-|----------|--------------|
+| Category | Technology |
+|------------|------------|
 | Language | Python |
 | Framework | Streamlit |
-| AI Model | Google Gemini |
+| AI | Google Gemini |
+| Charts | Plotly |
 | PDF Parsing | PDFPlumber |
 | DOCX Parsing | python-docx |
-| Charts | Plotly |
-| PDF Reports | ReportLab |
+| Reports | ReportLab |
+| Environment | python-dotenv |
 
 ---
 
@@ -160,7 +229,10 @@ The application evaluates ATS compatibility, identifies missing skills, measures
 
 ```text
 ResumeAI-Pro/
-│
+
+├── assets/
+│   └── screenshots/
+
 ├── components/
 │   ├── charts.py
 │   ├── dashboard.py
@@ -169,15 +241,15 @@ ResumeAI-Pro/
 │   ├── metrics.py
 │   ├── reviews.py
 │   └── skills.py
-│
-├── assets/
+
 ├── images/
-│
+
 ├── analyzer.py
 ├── app.py
 ├── career_advisor.py
 ├── config.py
 ├── cover_letter.py
+├── gemini_client.py
 ├── history.py
 ├── history.json
 ├── linkedin_summary.py
@@ -190,22 +262,22 @@ ResumeAI-Pro/
 ├── rewrite.py
 ├── ui.py
 ├── utils.py
+
 └── README.md
 ```
-
 ---
 
 # ⚙️ Installation
 
-## Clone the repository
+## 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/0115455/ResumeAI-Pro.git
+git clone https://github.com/PhantomMW/ResumeAI-Pro.git
 ```
 
 ---
 
-## Open the project
+## 2️⃣ Navigate to the Project
 
 ```bash
 cd ResumeAI-Pro
@@ -213,7 +285,7 @@ cd ResumeAI-Pro
 
 ---
 
-## Install dependencies
+## 3️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -221,7 +293,9 @@ pip install -r requirements.txt
 
 ---
 
-## Create a .env file
+## 4️⃣ Create Environment File
+
+Create a file named `.env`
 
 ```env
 GEMINI_API_KEY=YOUR_API_KEY
@@ -229,84 +303,155 @@ GEMINI_API_KEY=YOUR_API_KEY
 
 ---
 
-## Run the application
+## 5️⃣ Run the Application
 
 ```bash
 streamlit run app.py
 ```
 
+The application will start locally at:
+
+```
+http://localhost:8501
+```
+
 ---
 
-# 📊 Application Modules
+# 🚀 Live Demo
+
+🌐 **Streamlit Community Cloud**
+
+https://phantommw-resumeai.streamlit.app/
+
+---
+
+# 🤖 AI Capabilities
+
+ResumeAI Pro utilizes **Google Gemini AI** to deliver intelligent resume analysis and career assistance.
+
+### AI Features
+
+- Resume Analysis
+- ATS Compatibility Evaluation
+- Resume Quality Assessment
+- Job Matching
+- Missing Skills Detection
+- Hard & Soft Skills Identification
+- Resume Improvement Suggestions
+- Professional Resume Summary
+- AI Hiring Decision
+- Resume Rewriting
+- Cover Letter Generation
+- LinkedIn Summary Creation
+- Career Guidance
+- Resume AI Chat Assistant
+
+---
+
+# 📊 System Workflow
+
+```text
+                    User
+                      │
+                      ▼
+               Upload Resume
+                      │
+                      ▼
+             Resume Text Parser
+                      │
+                      ▼
+              Google Gemini AI
+                      │
+      ┌───────────────┼────────────────┐
+      ▼               ▼                ▼
+ ATS Analysis   Resume Analysis   Career Analysis
+      │               │                │
+      └───────────────┼────────────────┘
+                      ▼
+           Interactive Resume Dashboard
+                      │
+      ┌───────────────┼────────────────┐
+      ▼               ▼                ▼
+ Cover Letter   Resume Rewriter   Resume Chat
+                      │
+                      ▼
+              Professional PDF Report
+```
+
+---
+
+# 📦 Project Modules
 
 - Resume Parser
 - Resume Analyzer
-- ATS Checker
-- Resume Score Calculator
-- Job Matching
-- Skills Analyzer
+- ATS Optimization
+- Resume Dashboard
+- Skills Analysis
+- Interactive Charts
 - Resume Rewriter
 - Cover Letter Generator
 - LinkedIn Summary Generator
-- Career Advisor
-- Interview Questions
-- Resume Chat Assistant
-- PDF Report Generator
+- AI Career Advisor
+- Resume AI Chat
+- Professional PDF Report Generator
 - Analysis History
 
 ---
 
-# 💡 AI Capabilities
+# 🎯 Future Improvements
 
-The project utilizes Google Gemini AI to:
-
-- Analyze resume quality
-- Calculate ATS compatibility
-- Compare resumes with job descriptions
-- Detect missing skills
-- Generate professional cover letters
-- Rewrite resumes
-- Generate LinkedIn summaries
-- Provide career recommendations
-- Answer resume-related questions
-
----
-
-# 📈 Future Improvements
-
-- Multi-language Resume Support
-- CV Templates
-- LinkedIn Resume Import
+- User Authentication
+- Cloud Database Integration
+- Resume Version Comparison
 - Portfolio Analysis
 - AI Mock Interviews
-- Resume Ranking
+- Multi-language Support
 - Company-specific ATS Optimization
-- Resume Version Comparison
+- Resume Templates
+- LinkedIn Resume Import
+- Cloud Storage
 
 ---
 
 # 👨‍💻 Developer
 
+<div align="center">
+
 ## Mohammed Wael
 
-**AI Developer | Mechatronics Engineer**
+### 🤖 AI Developer | ⚙️ Mechatronics Engineer
+
+Passionate about Artificial Intelligence, Machine Learning, Embedded Systems, Automation, Robotics, and Software Development.
+
+</div>
 
 ---
 
-# 📬 Contact
+# 📬 Connect With Me
 
-GitHub
-
-https://github.com/PhantomMW
+- **GitHub:** https://github.com/PhantomMW
+- **Live Demo:** https://phantommw-resumeai.streamlit.app/
 
 ---
 
 # ⭐ Support
 
-If you found this project useful, consider giving it a ⭐ on GitHub.
+If you found this project useful, please consider giving it a ⭐ on GitHub.
 
 ---
 
 # 📄 License
 
-This project was developed for educational and portfolio purposes.
+This project is released under the **MIT License** and is intended for educational, research, and portfolio purposes.
+
+---
+
+<div align="center">
+
+## 🚀 Developed with ❤️ by Mohammed Wael
+
+### AI Developer | Mechatronics Engineer
+
+© 2026 Mohammed Wael. All Rights Reserved.
+
+</div>

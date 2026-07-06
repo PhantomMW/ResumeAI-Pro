@@ -1,10 +1,4 @@
-import google.generativeai as genai
-
-from config import GEMINI_API_KEY
-
-genai.configure(api_key=GEMINI_API_KEY)
-
-model = genai.GenerativeModel("gemini-2.5-flash")
+from gemini_client import generate_ai_response
 
 
 def rewrite_resume(
@@ -14,33 +8,30 @@ def rewrite_resume(
 ):
 
     prompt = f"""
-You are an expert Resume Writer and Senior HR Manager.
+You are an expert ATS Resume Writer.
 
-Rewrite the following resume professionally for this position.
+Rewrite the following resume professionally.
 
 Target Job:
+
 {job_title}
 
 Job Description:
+
 {job_description}
 
 Resume:
+
 {resume_text}
 
 Requirements:
 
-- Keep the information truthful.
-- Improve wording and professionalism.
-- Optimize for ATS.
-- Improve grammar.
-- Improve formatting.
-- Use strong action verbs.
-- Highlight achievements.
-- Organize sections clearly.
-- Keep the resume concise.
-- Return ONLY the rewritten resume.
+- ATS Optimized
+- Professional Formatting
+- Improve Bullet Points
+- Keep all truthful information
+- Improve readability
+- Modern resume style
 """
 
-    response = model.generate_content(prompt)
-
-    return response.text
+    return generate_ai_response(prompt)

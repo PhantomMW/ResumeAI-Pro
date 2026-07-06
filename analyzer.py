@@ -1,17 +1,7 @@
 import json
-import google.generativeai as genai
 
-from config import GEMINI_API_KEY
 from prompts import resume_analysis_prompt
-
-# ==========================================
-# Configure Gemini
-# ==========================================
-
-genai.configure(api_key=GEMINI_API_KEY)
-
-model = genai.GenerativeModel("gemini-2.5-flash")
-
+from gemini_client import generate_ai_response
 
 # ==========================================
 # Default Response
@@ -46,9 +36,8 @@ DEFAULT_RESPONSE = {
 
     "overall_recommendation": "",
 
-"hiring_decision": "",
-
-"hiring_reason": "",
+    "hiring_decision": "",
+    "hiring_reason": "",
 
     "interview_questions": []
 }
@@ -78,7 +67,11 @@ def clean_response(text):
 # Analyze Resume
 # ==========================================
 
-def analyze_resume(resume_text, job_title, job_description):
+def analyze_resume(
+    resume_text,
+    job_title,
+    job_description
+):
 
     prompt = resume_analysis_prompt(
         resume_text,
@@ -88,15 +81,28 @@ def analyze_resume(resume_text, job_title, job_description):
 
     try:
 
-        response = model.generate_content(prompt)
+        response = generate_ai_response(prompt)
 
-        cleaned = clean_response(response.text)
+        if response.startswith("⚠️"):
+
+            error = DEFAULT_RESPONSE.copy()
+
+            error["summary"] = response
+
+            error["overall_recommendation"] = (
+                "The AI service is currently unavailable."
+            )
+
+            return error
+
+        cleaned = clean_response(response)
 
         result = json.loads(cleaned)
 
-        # Fill missing keys automatically
         for key, value in DEFAULT_RESPONSE.items():
+
             if key not in result:
+
                 result[key] = value
 
         return result
@@ -105,10 +111,12 @@ def analyze_resume(resume_text, job_title, job_description):
 
         error = DEFAULT_RESPONSE.copy()
 
-        error["summary"] = "Failed to parse Gemini response."
+        error["summary"] = (
+            "Failed to parse the AI response."
+        )
 
         error["overall_recommendation"] = (
-            "Gemini returned an invalid JSON response."
+            "The AI returned an invalid JSON response."
         )
 
         return error

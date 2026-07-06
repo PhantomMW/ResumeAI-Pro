@@ -1,10 +1,4 @@
-import google.generativeai as genai
-
-from config import GEMINI_API_KEY
-
-genai.configure(api_key=GEMINI_API_KEY)
-
-model = genai.GenerativeModel("gemini-2.5-flash")
+from gemini_client import generate_ai_response
 
 
 def generate_cover_letter(
@@ -40,6 +34,4 @@ Requirements:
 - Strong closing paragraph
 """
 
-    response = model.generate_content(prompt)
-
-    return response.text
+    return generate_ai_response(prompt)

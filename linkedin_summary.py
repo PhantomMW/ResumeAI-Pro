@@ -1,10 +1,4 @@
-import google.generativeai as genai
-
-from config import GEMINI_API_KEY
-
-genai.configure(api_key=GEMINI_API_KEY)
-
-model = genai.GenerativeModel("gemini-2.5-flash")
+from gemini_client import generate_ai_response
 
 
 def generate_linkedin_summary(
@@ -13,30 +7,27 @@ def generate_linkedin_summary(
 ):
 
     prompt = f"""
-You are an expert LinkedIn Profile Writer.
+You are a professional LinkedIn branding expert.
 
-Using the following resume, write a professional LinkedIn About section.
+Write an outstanding LinkedIn About section.
 
-Target Position:
+Target Job:
+
 {job_title}
 
 Resume:
+
 {resume_text}
 
 Requirements:
 
-- 150–250 words
-- Professional
-- ATS Friendly
-- Strong opening
-- Highlight achievements
+- Professional tone
+- First person
+- Around 200 words
+- Highlight experience
 - Mention technical skills
-- Mention soft skills
-- End with career objective
-
-Return ONLY the LinkedIn About section.
+- Mention achievements
+- End with career goals
 """
 
-    response = model.generate_content(prompt)
-
-    return response.text
+    return generate_ai_response(prompt)
