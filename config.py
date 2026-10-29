@@ -9,13 +9,21 @@ import streamlit as st
 load_dotenv()
 
 # ==========================================
-# Gemini API Key
+# Gemini API Key (Safe Loading)
 # ==========================================
 
-if "GEMINI_API_KEY" in st.secrets:
-    GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
-else:
-    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_API_KEY = None
+
+# Safely check Streamlit secrets without raising StreamlitSecretNotFoundError
+try:
+    if hasattr(st, "secrets") and "GEMINI_API_KEY" in st.secrets:
+        GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
+except Exception:
+    pass
+
+# Fallback to operating system environment variables or .env file
+if not GEMINI_API_KEY:
+    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 
 # ==========================================
 # Gemini Model
